@@ -90,6 +90,30 @@ $ docker run --name mongo-shard-3-a --net mongo-cluster -d mongo mongod --shards
 $ docker run --name mongo-shard-3-b --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-3 --port 27017
 $ docker run --name mongo-shard-3-c --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-3 --port 27017
 ```
+### Configurando os Shards 1, 2 e 3
+Para realizar a configuração dos 3 grupos de Shards em um replicaset será necessário acessar o shell de um dos containers dos Shards individualmente.
+Grupo1()
+
+```shell
+$ docker exec -it mongo-config-1 mongo
+```
+Vincular os ConfigServers em um replicaset com o seguinte comando:
+```shell
+rs.initiate(
+   {
+      _id: "config-servers",
+      configsvr: true,
+      version: 1,
+      members: [
+         { _id: 0, host : "mongo-config-1:27017" },
+         { _id: 1, host : "mongo-config-2:27017" },
+         { _id: 2, host : "mongo-config-3:27017" }
+      ]
+   }
+)
+```
+
+
 
 
 
