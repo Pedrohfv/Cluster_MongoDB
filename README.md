@@ -35,9 +35,42 @@ Com o intuido de melhorar o entendimento da elaboração do cluster precisamos e
 
 * Shards: Responsáveis pelo armazenamento dos dados. Cada shard fica responsável por um subconjunto dos dados do banco.
 
+### Procedimento incial 
+Como se trata de um projeto estudantil e não para fins de produção, vamos criar uma rede para comunicação entre os contêineres em nossa própria máquina. Em prol da segurança e boas praticas nossa rede sejá insolada dos demais, impedindo que outros contêineres não tenham acesso a rede. Podemos gerar essa rede executando o seguinte comando:
+```shell
+$ docker network create mongo-cluster
+```
+
+### Criandos os ConfigServers
+Ter três Config Servers é fundamental para garantir a alta disponibilidade e a tolerância a falhas no ambiente de sharding. Se um Config Server falhar, os outros dois ainda podem manter a integridade do sistema e permitir que as operações de sharding continuem sem interrupções.
+```shell
+$ docker run --name mongo-config-1 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
+$ docker run --name mongo-config-2 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
+$ docker run --name mongo-config-3 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
+```
+
+
 ### Criando os Shards
 Serão criados três grupos de shards, cada um contendo três servidores. Dessa forma, teremos um servidor primário e dois secundários em cada grupo. Essa configuração visa evitar inconsistências durante o processo de eleição para escolher o próximo servidor primário do grupo, caso haja indisponibilidade em alguns dos servidores de um dos grupos de shards. É importante garantir que o número de réplicas em um grupo de shards seja sempre ímpar, pois isso impede empates durante a eleição.
 
+### Comandos para o grupo 1 dos Shards
+```shell
+$ docker run --name mongo-shard-1-a --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-1 --port 27017
+$ docker run --name mongo-shard-1-b --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-1 --port 27017
+$ docker run --name mongo-shard-1-c --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-1 --port 27017
+```
+### Comandos para o grupo 2 dos Shards
+```shell
+$ docker run --name mongo-shard-2-a --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-2 --port 27017
+$ docker run --name mongo-shard-2-b --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-2 --port 27017
+$ docker run --name mongo-shard-2-c --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-2 --port 27017
+```
+### Comandos para o grupo 3 dos Shards
+```shell
+$ docker run --name mongo-shard-3-a --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-3 --port 27017
+$ docker run --name mongo-shard-3-b --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-3 --port 27017
+$ docker run --name mongo-shard-3-c --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-3 --port 27017
+```
 
 
 
