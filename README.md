@@ -44,11 +44,30 @@ $ docker network create mongo-cluster
 ### Criandos os ConfigServers
 Ter três Config Servers é fundamental para garantir a alta disponibilidade e a tolerância a falhas no ambiente de sharding. Se um Config Server falhar, os outros dois ainda podem manter a integridade do sistema e permitir que as operações de sharding continuem sem interrupções.
 ```shell
-$ docker run --name mongo-config-1 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
-$ docker run --name mongo-config-2 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
-$ docker run --name mongo-config-3 --net mongo-shard -d mongo mongod --configsvr --replSet configserver --port 27017
+$ docker run --name mongo-config-1 --net mongo-shard -d mongo mongod --configsvr --replSet config-servers --port 27017
+$ docker run --name mongo-config-2 --net mongo-shard -d mongo mongod --configsvr --replSet config-servers --port 27017
+$ docker run --name mongo-config-3 --net mongo-shard -d mongo mongod --configsvr --replSet config-servers --port 27017
 ```
-
+### Configurando os ConfigServers
+Para realizar a configuração dos ConfigServers em um replicaset será necessário acessar o shell de um dos containers dos ConfigServes (mongo-config-1,  mongo-config-2,  mongo-config-3)
+```shell
+$ docker exec -it mongo-config-1 mongo
+```
+Vincular os ConfigServers em um replicaset com o seguinte comando:
+```shell
+rs.initiate(
+   {
+      _id: "config-servers",
+      configsvr: true,
+      version: 1,
+      members: [
+         { _id: 0, host : "mongo-config-1:27017" },
+         { _id: 1, host : "mongo-config-2:27017" },
+         { _id: 2, host : "mongo-config-3:27017" }
+      ]
+   }
+)
+```
 
 ### Criando os Shards
 Serão criados três grupos de shards, cada um contendo três servidores. Dessa forma, teremos um servidor primário e dois secundários em cada grupo. Essa configuração visa evitar inconsistências durante o processo de eleição para escolher o próximo servidor primário do grupo, caso haja indisponibilidade em alguns dos servidores de um dos grupos de shards. É importante garantir que o número de réplicas em um grupo de shards seja sempre ímpar, pois isso impede empates durante a eleição.
