@@ -154,8 +154,7 @@ rs.initiate(
 Como o intuido do roteador é de realizar cosultas no banco de dados e não de armazenar dados, podemos adotar a criação de pelo menos 1 roteador, visando custo para o cenário do projeto.
 
 ```shell
-$ docker run --name mongo-shard-1-a --net mongo-cluster -d mongo mongod --shardsvr --replSet shards-1 --port 27017
-
+docker run -p 27017:27017 --name mongo-router --net mongo-cluster -d mongo mongos --port 27017 --configdb config-servers/mongo-config-1:27017,mongo-config-2:27017,mongo-config-3:27017 --bind_ip_all
 ```
 
 
