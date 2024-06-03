@@ -176,9 +176,12 @@ sh.addShard("shards-3/mongo-shard-3-c:27017")
 
 ### Cluster MongoDB finalizado
 
-Docker
+Docker:
+
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Docker.png"/>
-MongoDB
+
+MongoDB:
+
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/MongoDB.png"/>
 
 
