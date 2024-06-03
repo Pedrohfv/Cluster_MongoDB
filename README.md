@@ -157,11 +157,11 @@ $ docker run -p 27017:27017 --name mongo-router --net mongo-cluster -d mongo mon
 ```
 
 ### Associação do roteador aos Shards
-Para associar o roteador aos grupos de shards, é necessário acessar o shell do Mongo do container do roteador.
+Para associar o roteador aos grupos de shards, é necessário acessar o shell do Mongo ao container do roteador.
 ```shell
 $ docker exec -it mongo-router mongosh
 ```
-
+### Associar os shards com os comandos
 ```shell
 sh.addShard("shards-1/mongo-shard-1-a:27017")
 sh.addShard("shards-1/mongo-shard-1-b:27017")
