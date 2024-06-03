@@ -162,6 +162,23 @@ Para associar o roteador aos grupos de shards, é necessário acessar o shell do
 $ docker exec -it mongo-router mongosh
 ```
 
+```shell
+sh.addShard("shards-1/mongo-shard-1-a:27017")
+sh.addShard("shards-1/mongo-shard-1-b:27017")
+sh.addShard("shards-1/mongo-shard-1-c:27017")
+sh.addShard("shards-2/mongo-shard-2-a:27017")
+sh.addShard("shards-2/mongo-shard-2-b:27017")
+sh.addShard("shards-2/mongo-shard-2-c:27017")
+sh.addShard("shards-3/mongo-shard-3-a:27017")
+sh.addShard("shards-3/mongo-shard-3-b:27017")
+sh.addShard("shards-3/mongo-shard-3-c:27017")
+```
+
+### Cluster MongoDB finalizado
+
+
+
+
 
 
 <a id="simulação_filiais"></a>
