@@ -53,7 +53,7 @@ Para realizar a configuração dos ConfigServers em um replicaset será necessá
 ```shell
 $ docker exec -it mongo-config-1 mongosh
 ```
-# Vincular os ConfigServers em um replicaset com o seguinte comando:
+### Vincular os ConfigServers em um replicaset com o seguinte comando:
 ```shell
 rs.initiate(
    {
@@ -96,11 +96,11 @@ Para realizar a configuração dos 3 grupos de Shards em um replicaset será nec
 * Grupo 2(Shards-2):mongo-shard-2-a, mongo-shard-2-b e mongo-shard-2-c.
 * Grupo 3(Shards-3):mongo-shard-3-a, mongo-shard-3-b e mongo-shard-3-c.
 
-# Grupo 1
+### Grupo 1
 ```shell
 $ docker exec -it mongo-shard-1-a mongosh
 ```
-# Vincular os Shards em um replicaset com o seguinte comando:
+### Vincular os Shards em um replicaset com o seguinte comando:
 ```shell
 rs.initiate(
    {
@@ -110,6 +110,42 @@ rs.initiate(
          { _id: 0, host : "mongo-shard-1-a:27017" },
          { _id: 1, host : "mongo-shard-1-b:27017" },
          { _id: 2, host : "mongo-shard-1-c:27017" },
+      ]
+   }
+)
+```
+### Grupo 2
+```shell
+$ docker exec -it mongo-shard-2-a mongosh
+```
+### Vincular os Shards em um replicaset com o seguinte comando:
+```shell
+rs.initiate(
+   {
+      _id: "shards-2",
+      version: 1,
+      members: [
+         { _id: 0, host : "mongo-shard-2-a:27017" },
+         { _id: 1, host : "mongo-shard-2-b:27017" },
+         { _id: 2, host : "mongo-shard-2-c:27017" },
+      ]
+   }
+)
+```
+### Grupo 3
+```shell
+$ docker exec -it mongo-shard-3-a mongosh
+```
+### Vincular os Shards em um replicaset com o seguinte comando:
+```shell
+rs.initiate(
+   {
+      _id: "shards-3",
+      version: 1,
+      members: [
+         { _id: 0, host : "mongo-shard-3-a:27017" },
+         { _id: 1, host : "mongo-shard-3-b:27017" },
+         { _id: 2, host : "mongo-shard-3-c:27017" },
       ]
    }
 )
