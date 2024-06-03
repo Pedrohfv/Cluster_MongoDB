@@ -151,10 +151,15 @@ rs.initiate(
 )
 ```
 ### Criando o Roteador
-Como o intuido do roteador é de realizar cosultas no banco de dados e não de armazenar dados, podemos adotar a criação de pelo menos 1 roteador, visando custo para o cenário do projeto.
-
+Como o objetivo do roteador é realizar consultas no banco de dados e não armazenar dados, podemos optar por ter pelo menos 1 roteador, visando custo para o cenário do projeto. Mesmo com sua falha, os dados do cluster não seriam perdidos, pois há redundância nos shards e nos servidores de configuração que são responsáveis pela armazenagem dos dados.
 ```shell
-docker run -p 27017:27017 --name mongo-router --net mongo-cluster -d mongo mongos --port 27017 --configdb config-servers/mongo-config-1:27017,mongo-config-2:27017,mongo-config-3:27017 --bind_ip_all
+$ docker run -p 27017:27017 --name mongo-router --net mongo-cluster -d mongo mongos --port 27017 --configdb config-servers/mongo-config-1:27017,mongo-config-2:27017,mongo-config-3:27017 --bind_ip_all
+```
+
+### Associação do roteador aos Shards
+Para associar o roteador aos grupos de shards, é necessário acessar o shell do Mongo do container do roteador.
+```shell
+$ docker exec -it mongo-router mongosh
 ```
 
 
