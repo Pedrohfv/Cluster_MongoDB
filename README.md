@@ -49,11 +49,11 @@ $ docker run --name mongo-config-2 --net mongo-shard -d mongo mongod --configsvr
 $ docker run --name mongo-config-3 --net mongo-shard -d mongo mongod --configsvr --replSet config-servers --port 27017
 ```
 ### Configurando os ConfigServers
-Para realizar a configuração dos ConfigServers em um replicaset será necessário acessar o shell de um dos containers dos ConfigServes (mongo-config-1,  mongo-config-2,  mongo-config-3)
+Para realizar a configuração dos ConfigServers em um replicaset será necessário acessar o shell do  mongo de um dos containers dos ConfigServes (mongo-config-1,  mongo-config-2,  mongo-config-3)
 ```shell
 $ docker exec -it mongo-config-1 mongosh
 ```
-Vincular os ConfigServers em um replicaset com o seguinte comando:
+# Vincular os ConfigServers em um replicaset com o seguinte comando:
 ```shell
 rs.initiate(
    {
@@ -92,25 +92,24 @@ $ docker run --name mongo-shard-3-c --net mongo-cluster -d mongo mongod --shards
 ```
 ### Configurando os Shards 1, 2 e 3
 Para realizar a configuração dos 3 grupos de Shards em um replicaset será necessário acessar o shell de um dos containers dos Shards individualmente.
-Grupo 1(Shards-1):mongo-shard-1-a, mongo-shard-1-b e mongo-shard-1-c.
-Grupo 2(Shards-2):mongo-shard-2-a, mongo-shard-2-b e mongo-shard-2-c.
-Grupo 3(Shards-3):mongo-shard-3-a, mongo-shard-3-b e mongo-shard-3-c.
+* Grupo 1(Shards-1):mongo-shard-1-a, mongo-shard-1-b e mongo-shard-1-c.
+* Grupo 2(Shards-2):mongo-shard-2-a, mongo-shard-2-b e mongo-shard-2-c.
+* Grupo 3(Shards-3):mongo-shard-3-a, mongo-shard-3-b e mongo-shard-3-c.
 
-Grupo 1
+# Grupo 1
 ```shell
 $ docker exec -it mongo-shard-1-a mongosh
 ```
-Vincular os Shards em um replicaset com o seguinte comando:
+# Vincular os Shards em um replicaset com o seguinte comando:
 ```shell
 rs.initiate(
    {
-      _id: "config-servers",
-      configsvr: true,
+      _id: "shards-1",
       version: 1,
       members: [
-         { _id: 0, host : "mongo-config-1:27017" },
-         { _id: 1, host : "mongo-config-2:27017" },
-         { _id: 2, host : "mongo-config-3:27017" }
+         { _id: 0, host : "mongo-shard-1-a:27017" },
+         { _id: 1, host : "mongo-shard-1-b:27017" },
+         { _id: 2, host : "mongo-shard-1-c:27017" },
       ]
    }
 )
