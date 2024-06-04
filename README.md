@@ -173,6 +173,14 @@ sh.addShard("shards-3/mongo-shard-3-a:27017")
 sh.addShard("shards-3/mongo-shard-3-b:27017")
 sh.addShard("shards-3/mongo-shard-3-c:27017")
 ```
+### Fragmentação dos dados
+Após a criação do cluster, iremos definir como será a fragmentação dos dados nas shards e isso será concretizada apartir do momento que criarmos o banco de dados da filial e sua collention.
+Cada collection possuira uma index chamado id_produto e este idex será definido com um hashed
+
+
+
+
+
 
 ### Cluster MongoDB finalizado
 
@@ -188,7 +196,7 @@ MongoDB:
 <a id="Implementação_Simulada_de_Dados"></a>
 
 Após a implementação do Cluster foi gerado a insernção de dados no bando de bados na loja matriz e de cada filial.
-O processo de Simulação de dados foi gerados atráves do MongoDB.py.
+O processo de Simulação de dados foi gerados atráves do MongoDB.py. Incialmente foram gerados os bancos de dados 
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Collection.png"/>
 
