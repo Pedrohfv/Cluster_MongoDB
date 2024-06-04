@@ -190,6 +190,8 @@ MongoDB:
 Após a implementação do Cluster foi gerado a insernção de dados no bando de bados na loja matriz e de cada filial.
 O processo de Simulação de dados foi gerados atráves do MongoDB.py.
 
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Collection.png"/>
+
 
 
 
