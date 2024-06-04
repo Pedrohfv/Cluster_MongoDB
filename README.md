@@ -187,6 +187,13 @@ MongoDB:
 # Implementação Simulada de Dados
 <a id="Implementação_Simulada_de_Dados"></a>
 
+Após a implementação do Cluster foi gerado a insernção de dados no bando de bados na loja matriz e de cada filial.
+O processo de Simulação de dados foi gerados atráves do MongoDB.py.
+
+
+
+
+
 
 
 
