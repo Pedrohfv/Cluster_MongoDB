@@ -174,10 +174,27 @@ sh.addShard("shards-3/mongo-shard-3-b:27017")
 sh.addShard("shards-3/mongo-shard-3-c:27017")
 ```
 ### Fragmentação dos dados
-Após a criação do cluster, iremos definir como será a fragmentação dos dados nas shards e isso será concretizada apartir do momento que criarmos o banco de dados da filial e sua collention.
-Cada collection possuira uma index chamado id_produto e este idex será definido com um hashed
+
+Após a criação do cluster, iremos definir como será a fragmentação dos dados nas shards. Isso será concretizado a partir do momento em que criarmos o banco de dados da filial e sua collection. Cada collection possuirá um índice chamado id_produto, que será definido como hashed. Após a definição do índice hashed, será implementada a distribuição da collection. Isso permitirá que os dados sejam bem distribuídos e não sobrecarreguem nenhum dos shards. Cada dado inserido na collection será armazenado em um shard, e a definição do shard será feita com a ajuda do balancer, que moverá os chunks (faixas de dados). Isso permitirá que o cluster tenha uma escala horizontal, distribuindo dados e carga de trabalho entre múltiplos servidores de forma eficiente.
+
+* Shard: Um servidor ou conjunto de servidores que armazena uma parte dos dados de um banco de dados sharded.
+* Chunk: Uma faixa de dados dentro de um shard, que é distribuída com base na chave de shard.
+* Balancer: Processo que move chunks entre shards para garantir um balanceamento de carga.
+
+A fragmentação será essencial para o objetivo do projeto devido ao grande número de filiais, o que gerará um volume significativo de inserções, exclusões, atualizações e consultas nos bancos de dados.
+
+Códigos para o processo de fragmentação da sua colletion. Executados no shell do Mongo ou diretamento no seu código caso exista.
 
 
+```shell
+<banco>.<collection>.createIndex({"id_produto": "hashed"}))
+```
+```shell
+use <banco>
+```
+```shell
+sh.shardCollection("<banco>.<collection>",{"id_produto":"hashed"})
+```
 
 
 
