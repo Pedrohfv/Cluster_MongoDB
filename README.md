@@ -219,7 +219,7 @@ O processo de Simulação de dados foi gerados atráves de um arquivo programado
 
 Foram injetados 100mil documentos para cada filial e o processo de destribuição dos dados foram feitos conforme idealizados
 
-imagens da destribuição dos shards para cada coleção:
+Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de cada coleção:
 * estoque_produtos_filial_1
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_1.png"/>
 
