@@ -239,9 +239,12 @@ Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de ca
 
 ### Consulta e Atualização de dados
 
-Através do programa() também existe a possibilidade de realizar consulta dos produtos e alterações.
+Através do programa() também existe a possibilidade de realizar consultas dos produtos e alterações.
 
 Simulação de consulta:
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Consulta_banco.png"/>
+
 
 
 
