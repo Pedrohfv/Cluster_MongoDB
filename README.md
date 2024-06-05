@@ -266,17 +266,30 @@ Como forma de realizar um teste de desempenho no cluster, foi desenvolvido outro
 
 Foram realizados testes de estresse nos bancos de dados e o monitoramento ocorreu pelo MongoCompass.
 
-O desempenho do banco de dados apresenta um comportamento estável em termos de operações realizadas. A rede mostra uma atividade consistente, com 99 KB de dados enviados e 9 KB recebidos. A memória utilizada permanece eficiente, com 2.57 GB de memória virtual e 80 MB de memória residente. As operações mais lentas foram as consultas "GETMORE" na coleção estoque_produtos_filial_3, com tempos em torno de 39 ms, indicando uma performance aceitável para as operações de leitura no banco de dados.
+O desempenho do banco de dados apresenta um comportamento estável em termos de operações realizadas. A rede mostra uma atividade consistente, com 147 KB de dados enviados e 11 KB recebidos. A memória utilizada permaneceu eficiente, com 2,55 GB de memória virtual e 70 MB de memória residente. As operações mais lentas foram as consultas "GETMORE" na coleção estoque_produtos_filial_2, com tempos em torno de 1464,94 ms, indicando uma latência alta para as operações de leitura no banco de dados. Ressalvo que esta é apenas uma representação momentânea do processo de estresse do banco de dados e que uma utilização real do banco geraria dados mais concretos para análise de desempenho. 
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Parametros_banco.png"/>
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
 
+### Este de disponibilidade
+
+Foi realizado um teste de disponibilidade em um dos bancos de dados. Uma nova filial foi criada, e foram observadas informações do banco e da coleção. Podemos observar que o banco possui uma shard primária e que o processo de fragmentação foi realizado com sucesso. O teste mostra que, durante a inserção de dados no banco, o shard-2-a foi desativado e a distribuição dos dados foi mantida devido ao processo de fragmentação, pois houve o processo de failover automático.  
+
+Filial criada com apenas 1 documento e fragmentada
+<img src="(https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_7.png)"/>
+
+Desativação docker shard-2-a
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Desativado_shard_2_a.png"/>
+
+Destribuição realizada mesmo com o shard-2-a desativado.
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Destribui%C3%A7%C3%A3o_ok.png"/>
+
 # Relatório Final
 
 A abordagem adotada para o projeto do Cluster MongoDB foi cuidadosamente planejada com foco na disponibilidade e escalabilidade do sistema. Optei por criar três shards, três Config Servers e um roteador para garantir alta disponibilidade e tolerância a falhas.
 
-A escolha de três shards foi feita visando distribuir a carga de trabalho e garantir redundância nos dados. Cada shard é responsável por armazenar uma parte dos dados, e ter três shards permite uma distribuição equilibrada e uma maior capacidade de processamento. Além disso, ter múltiplos shards aumenta a disponibilidade do sistema, pois mesmo que um shard falhe, os outros dois podem continuar operando normalmente.
+A escolha de três grupos de shards foi feita visando distribuir a carga de trabalho e garantir redundância nos dados. Cada shard é responsável por armazenar uma parte dos dados, e ter três grupos de shards permite uma distribuição equilibrada e uma maior capacidade de processamento. Além disso, ter múltiplos shards aumenta a disponibilidade do sistema, pois mesmo que um shard falhe, o outro pode continuar operando normalmente.
 
 Os três Config Servers também foram projetados para fornecer alta disponibilidade e garantir a integridade dos metadados do cluster. Ao ter três Config Servers em um replicaset, o sistema pode continuar funcionando sem interrupções mesmo se um dos servidores falhar. Isso é crucial para garantir que as operações de sharding possam continuar sem problemas.
 
