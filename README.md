@@ -195,7 +195,7 @@ use <banco>
 sh.shardCollection("<banco>.<collection>",{"id_produto":"hashed"})
 ```
 ### Resultado da destribuição:
-
+Imagens ilustrativas da distribuição prevista
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o.png"/>
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o2.png"/>
 
