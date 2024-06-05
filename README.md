@@ -199,19 +199,15 @@ sh.shardCollection("<banco>.<collection>",{"id_produto":"hashed"})
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o.png"/>
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o2.png"/>
 
-
-
-
-
 ### Cluster MongoDB finalizado
 
-Contanies em execução no Docker:
+Contêineres em execução no Docker:
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Docker.png"/>
 
 MongoDB:
 
-<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/MongoDB.png"/>
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Cluster_funcionamento.png"/>
 
 # Implementação Simulada de Dados
 <a id="Implementação_Simulada_de_Dados"></a>
