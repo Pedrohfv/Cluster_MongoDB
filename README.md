@@ -20,7 +20,7 @@ Principais requisitos:
 # Projeção dos passos a serem seguidos
 * Passo 1: [Criação do Cluster Mongodb](#Criando_o_Cluster_Mongodb).
 * Passo 2: [Implementação Simulada de Dados](#Implementação_Simulada_de_Dados).
-* Passo 3: [Simluação de desempesnho do cluster](#simulação_desempenho).
+* Passo 3: [Simluação de desempenho do cluster](#simulação_desempenho).
 
 # Criando o Cluster Mongodb
 <a id="Criando_o_Cluster_Mongodb"></a>
