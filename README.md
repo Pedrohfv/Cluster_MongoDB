@@ -185,7 +185,6 @@ A fragmentação será essencial para o objetivo do projeto devido ao grande nú
 
 Códigos para o processo de fragmentação da sua colletion. Executados no shell do Mongo ou diretamento no seu código caso exista.
 
-
 ```shell
 <banco>.<collection>.createIndex({"id_produto": "hashed"}))
 ```
@@ -195,6 +194,11 @@ use <banco>
 ```shell
 sh.shardCollection("<banco>.<collection>",{"id_produto":"hashed"})
 ```
+### Resultado da destribuição:
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o.png"/>
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Fragmenta%C3%A7%C3%A3o2.png"/>
+
 
 
 
