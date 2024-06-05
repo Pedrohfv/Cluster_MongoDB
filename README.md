@@ -270,6 +270,17 @@ O desempenho do banco de dados apresenta um comportamento estável em termos de 
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
 
+# Relatório Final
+
+A abordagem adotada para o projeto do Cluster MongoDB buscou criar uma infraestrutura distribuída capaz de atender aos requisitos de escalabilidade e eficiência para o gerenciamento de grandes volumes de dados de uma cadeia de supermercados. A arquitetura do sistema foi projetada com base nos princípios de balanceamento de carga, tolerância a falhas e otimização de consultas.
+
+Após a criação do cluster MongoDB utilizando contêineres Docker, foram configurados os componentes essenciais, como Config Servers, Shards e o Roteador. A distribuição dos dados foi planejada de forma a garantir a redundância e a alta disponibilidade do sistema, com a criação de réplicas dos shards e config servers.
+
+A simulação de dados foi realizada através de um programa em Python, que gerou e inseriu um grande volume de registros em cada filial da cadeia de supermercados. A fragmentação dos dados foi implementada conforme planejado, garantindo uma distribuição eficiente e equilibrada nos grupos de shards.
+
+Durante os testes de desempenho do cluster, foram realizadas operações de consulta, atualização e inserção, com monitoramento constante através do MongoDB Compass. Os resultados dos testes demonstraram uma performance estável e eficiente do banco de dados, com tempos de resposta aceitáveis para as operações realizadas.
+
+
 
 
 
