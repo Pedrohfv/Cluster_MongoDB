@@ -253,10 +253,5 @@ Realizando a simulação de atualização de um produto pelo ID.
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Atualiza_banco.png"/>
 
-
-
-
-
-
-
+# Simluação de desempesnho do cluster
 <a id="simulação_desempenho"></a>
