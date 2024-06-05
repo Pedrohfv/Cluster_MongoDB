@@ -213,7 +213,7 @@ MongoDBCompass:
 <a id="Implementação_Simulada_de_Dados"></a>
 
 Após a implementação do Cluster, foram criados os bancos de dados para cada filial e gerada a inserção de dados para cada collection. O processo de simulação de dados foi realizado através de um arquivo programado em Python chamado [Cluster_Consulta_Atualiza_Gera.PY](https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Programas/Cluster_Consulta_Atualiza_Gera.PY), desenvolvido para este projeto. Inicialmente, foram gerados 5 bancos para cada filial (varejo_filial_x) e cada filial possuirá 1 collection (estoque_produtos_filial_x).
-
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Collection.png"/>
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
 
 Foram injetados 100 mil documentos para cada filial, e o processo de distribuição dos dados foi realizado conforme idealizado. É importante salientar que a configuração do roteador para a fragmentação dos dados ocorreu no momento da geração da coleção. 
