@@ -255,3 +255,22 @@ Realizando a simulação de atualização de um produto pelo ID.
 
 # Simluação de desempesnho do cluster
 <a id="simulação_desempenho"></a>
+
+Como forma de realizar um teste de desempenho no cluster, foi desenvolvido outro programa em Python para realizar requisições no banco de dados, tais como inserções, exclusões e atualizações.
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Atualiza_banco.png"/>
+
+### Leitura dos parametros de performace do banco.
+
+Foram realizados testes de estresse nos bancos de dados e o monitoramento ocorreu pelo MongoCompass.
+
+O desempenho do banco de dados apresenta um comportamento estável em termos de operações realizadas. A rede mostra uma atividade consistente, com 99 KB de dados enviados e 9 KB recebidos. A memória utilizada permanece eficiente, com 2.57 GB de memória virtual e 80 MB de memória residente. As operações mais lentas foram as consultas "GETMORE" na coleção estoque_produtos_filial_3, com tempos em torno de 39 ms, indicando uma performance aceitável para as operações de leitura no banco de dados.
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Parametros_banco.png"/>
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
+
+
+
+
+
