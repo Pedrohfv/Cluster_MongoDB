@@ -213,8 +213,8 @@ MongoDBCompass:
 <a id="Implementação_Simulada_de_Dados"></a>
 
 Após a implementação do Cluster foi criado os bancos de dados para cada filial, gerado a inserção de dados para cada collention.
-O processo de Simulação de dados foi gerados atráves de um arquivo programado em Python chamado ![Cluster_Consulta_Atualiza_Gera.PY
- ](https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Programas/Cluster_Consulta_Atualiza_Gera.PY), desenvolvido para este projeto. Incialmente foram gerados 5 bancos para cada filial(varejo_filial_x) e cada filial possuirá 1 collection(estoque_produtos_filial_x).
+O processo de Simulação de dados foi gerados atráves de um arquivo programado em Python chamado [Cluster_Consulta_Atualiza_Gera.PY
+](https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Programas/Cluster_Consulta_Atualiza_Gera.PY), desenvolvido para este projeto. Incialmente foram gerados 5 bancos para cada filial(varejo_filial_x) e cada filial possuirá 1 collection(estoque_produtos_filial_x).
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
 
@@ -257,7 +257,8 @@ Realizando a simulação de atualização de um produto pelo ID.
 # Simluação de desempesnho do cluster
 <a id="simulação_desempenho"></a>
 
-Como forma de realizar um teste de desempenho no cluster, foi desenvolvido outro programa em Python para realizar requisições no banco de dados, tais como inserções, exclusões e atualizações.
+Como forma de realizar um teste de desempenho no cluster, foi desenvolvido outro programa em Python chamado [Cluster_Stress_Testing.py
+](https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Programas/Cluster_Stress_Testing.py) para realizar requisições no banco de dados, tais como inserções, exclusões e atualizações.
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
 
