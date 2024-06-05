@@ -285,15 +285,15 @@ Destribuição realizada mesmo com o shard-2-a desativado.
 
 # Relatório Final
 
-A abordagem adotada para o projeto do Cluster MongoDB foi cuidadosamente planejada com foco na disponibilidade e escalabilidade do sistema. Optei por criar três shards, três Config Servers e um roteador para garantir alta disponibilidade e tolerância a falhas.
+A estratégia para o projeto do Cluster MongoDB foi meticulosamente planejada para priorizar a disponibilidade e a escalabilidade do sistema. Optei por configurar três shards, três Config Servers e um roteador para assegurar que o sistema fosse altamente disponível e resistente a falhas.
 
-A escolha de três grupos de shards foi feita visando distribuir a carga de trabalho e garantir redundância nos dados. Cada shard é responsável por armazenar uma parte dos dados, e ter três grupos de shards permite uma distribuição equilibrada e uma maior capacidade de processamento. Além disso, ter múltiplos shards aumenta a disponibilidade do sistema, pois mesmo que um shard falhe, o outro pode continuar operando normalmente.
+A decisão de usar três conjuntos de shards foi tomada para distribuir a carga de trabalho e garantir redundância nos dados. Cada shard é responsável por armazenar uma parte dos dados, e ter três conjuntos permite uma distribuição equilibrada e uma maior capacidade de processamento. Além disso, múltiplos shards aumentam a disponibilidade, permitindo que o sistema continue funcionando mesmo se um shard falhar.
 
-Os três Config Servers também foram projetados para fornecer alta disponibilidade e garantir a integridade dos metadados do cluster. Ao ter três Config Servers em um replicaset, o sistema pode continuar funcionando sem interrupções mesmo se um dos servidores falhar. Isso é crucial para garantir que as operações de sharding possam continuar sem problemas.
+Os três Config Servers também foram projetados para oferecer alta disponibilidade e manter a integridade dos metadados do cluster. Ao configurá-los em um replicaset de três servidores, o sistema pode continuar operando sem interrupções mesmo se um dos servidores falhar. Isso é essencial para garantir que as operações de sharding possam continuar sem problemas.
 
-Por fim, o roteador foi implementado para distribuir as consultas de forma eficiente entre os shards. Ter um único roteador simplifica a arquitetura do sistema e reduz o custo operacional. Além disso, o roteador foi configurado para garantir que as consultas sejam roteadas para os shards corretos, garantindo um desempenho otimizado.
+Por último, o roteador foi implementado para distribuir consultas de forma eficiente entre os shards. Ter um único roteador simplifica a arquitetura do sistema e reduz o custo operacional. Além disso, ele foi configurado para garantir que as consultas sejam direcionadas para os shards corretos, garantindo um desempenho otimizado.
 
-Essas decisões foram tomadas com o objetivo de garantir a disponibilidade e confiabilidade do sistema, mesmo em face de falhas de hardware ou interrupções de rede. O projeto foi concebido com uma abordagem voltada para a disponibilidade, visando garantir que o sistema possa lidar com grandes volumes de dados de forma eficiente e confiável em um ambiente distribuído.
+Todas essas decisões foram tomadas para assegurar a disponibilidade e confiabilidade do sistema, mesmo diante de falhas de hardware ou interrupções de rede. O projeto foi concebido com uma abordagem focada na disponibilidade, visando garantir que o sistema possa lidar com grandes volumes de dados de forma eficiente e confiável em um ambiente distribuído.
 
 
 
