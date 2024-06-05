@@ -212,9 +212,27 @@ MongoDBCompass:
 # Implementação Simulada de Dados
 <a id="Implementação_Simulada_de_Dados"></a>
 
-Após a implementação do Cluster foi criado os bancos de dados para cada filial, gerado a insernção de dados para cada collention.
+Após a implementação do Cluster foi criado os bancos de dados para cada filial, gerado a inserção de dados para cada collention.
 O processo de Simulação de dados foi gerados atráves de um arquivo programado em Python (). Incialmente foram gerados 5 bancos para cada filial(varejo_filial_x) e cada filial possuirá 1 collection(estoque_produtos_filial_x). 
 
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
+
+Foram injetados 100mil documentos para cada filial e o processo de destribuição dos dados foram feitos conforme idealizados
+
+imagens da destribuição dos shards para cada coleção:
+* estoque_produtos_filial_1
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_1.png"/>
+
+* estoque_produtos_filial_2
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_2.png"/>
+
+* estoque_produtos_filial_3
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_3.png"/>
+
+* estoque_produtos_filial_4
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_4.png"/>
+
+* estoque_produtos_filial_5
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
 
 
