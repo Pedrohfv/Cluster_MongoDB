@@ -213,11 +213,13 @@ MongoDBCompass:
 <a id="Implementação_Simulada_de_Dados"></a>
 
 Após a implementação do Cluster foi criado os bancos de dados para cada filial, gerado a inserção de dados para cada collention.
-O processo de Simulação de dados foi gerados atráves de um arquivo programado em Python (). Incialmente foram gerados 5 bancos para cada filial(varejo_filial_x) e cada filial possuirá 1 collection(estoque_produtos_filial_x). 
+O processo de Simulação de dados foi gerados atráves de um arquivo programado em Python (). Incialmente foram gerados 5 bancos para cada filial(varejo_filial_x) e cada filial possuirá 1 collection(estoque_produtos_filial_x).
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
 
-Foram injetados 100mil documentos para cada filial e o processo de destribuição dos dados foram feitos conforme idealizados
+Foram injetados 100mil documentos para cada filial e o processo de destribuição dos dados foram feitos conforme idealizados. Importante salientar que o processo de configuração para o roteador realizar a fragmentação dos dados ocorreu no momento de gerar a coleção. 
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Conf_fragmenta%C3%A7%C3%A3o.png"/>
 
 Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de cada coleção:
 * estoque_produtos_filial_1
@@ -233,7 +235,13 @@ Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de ca
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_4.png"/>
 
 * estoque_produtos_filial_5
-<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Simula%C3%A7%C3%A3o_dados.png"/>
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_5.png"/>
+
+### Consulta e Atualização de dados
+
+Atrasvéz do programa() também existe a possibilidade de realizar consulta dos produtos e alterações.
+
+Simulação de consulta:
 
 
 
