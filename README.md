@@ -36,7 +36,7 @@ Com o intuido de melhorar o entendimento da elaboração do cluster precisamos e
 * Shards: Responsáveis pelo armazenamento dos dados. Cada shard fica responsável por um subconjunto dos dados do banco.
 
 ### Procedimento incial 
-Como se trata de um projeto estudantil e não para fins de produção, vamos criar uma rede para comunicação entre os contêineres em nossa própria máquina. Em prol da segurança e boas praticas nossa rede sejá insolada dos demais, impedindo que outros contêineres não tenham acesso a rede. Podemos gerar essa rede executando o seguinte comando:
+Como se trata de um projeto estudantil e não para fins de produção, vamos criar uma rede para comunicação entre os contêineres em nossa própria máquina. Em prol da segurança e boas praticas nossa rede sejá insolada dos demais, impedindo que outros contêineres tenham acesso a rede. Podemos gerar essa rede executando o seguinte comando:
 ```shell
 $ docker network create mongo-cluster
 ```
