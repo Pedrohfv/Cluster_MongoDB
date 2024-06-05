@@ -272,13 +272,15 @@ O desempenho do banco de dados apresenta um comportamento estável em termos de 
 
 # Relatório Final
 
-A abordagem adotada para o projeto do Cluster MongoDB buscou criar uma infraestrutura distribuída capaz de atender aos requisitos de escalabilidade e eficiência para o gerenciamento de grandes volumes de dados de uma cadeia de supermercados. A arquitetura do sistema foi projetada com base nos princípios de balanceamento de carga, tolerância a falhas e otimização de consultas.
+A abordagem adotada para o projeto do Cluster MongoDB foi cuidadosamente planejada com foco na disponibilidade e escalabilidade do sistema. Optei por criar três shards, três Config Servers e um roteador para garantir alta disponibilidade e tolerância a falhas.
 
-Após a criação do cluster MongoDB utilizando contêineres Docker, foram configurados os componentes essenciais, como Config Servers, Shards e o Roteador. A distribuição dos dados foi planejada de forma a garantir a redundância e a alta disponibilidade do sistema, com a criação de réplicas dos shards e config servers.
+A escolha de três shards foi feita visando distribuir a carga de trabalho e garantir redundância nos dados. Cada shard é responsável por armazenar uma parte dos dados, e ter três shards permite uma distribuição equilibrada e uma maior capacidade de processamento. Além disso, ter múltiplos shards aumenta a disponibilidade do sistema, pois mesmo que um shard falhe, os outros dois podem continuar operando normalmente.
 
-A simulação de dados foi realizada através de um programa em Python, que gerou e inseriu um grande volume de registros em cada filial da cadeia de supermercados. A fragmentação dos dados foi implementada conforme planejado, garantindo uma distribuição eficiente e equilibrada nos grupos de shards.
+Os três Config Servers também foram projetados para fornecer alta disponibilidade e garantir a integridade dos metadados do cluster. Ao ter três Config Servers em um replicaset, o sistema pode continuar funcionando sem interrupções mesmo se um dos servidores falhar. Isso é crucial para garantir que as operações de sharding possam continuar sem problemas.
 
-Durante os testes de desempenho do cluster, foram realizadas operações de consulta, atualização e inserção, com monitoramento constante através do MongoDB Compass. Os resultados dos testes demonstraram uma performance estável e eficiente do banco de dados, com tempos de resposta aceitáveis para as operações realizadas.
+Por fim, o roteador foi implementado para distribuir as consultas de forma eficiente entre os shards. Ter um único roteador simplifica a arquitetura do sistema e reduz o custo operacional. Além disso, o roteador foi configurado para garantir que as consultas sejam roteadas para os shards corretos, garantindo um desempenho otimizado.
+
+Essas decisões foram tomadas com o objetivo de garantir a disponibilidade e confiabilidade do sistema, mesmo em face de falhas de hardware ou interrupções de rede. O projeto foi concebido com uma abordagem voltada para a disponibilidade, visando garantir que o sistema possa lidar com grandes volumes de dados de forma eficiente e confiável em um ambiente distribuído.
 
 
 
