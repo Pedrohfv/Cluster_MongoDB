@@ -205,7 +205,7 @@ sh.shardCollection("<banco>.<collection>",{"id_produto":"hashed"})
 
 ### Cluster MongoDB finalizado
 
-Docker:
+Contanies em execução no Docker:
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Docker.png"/>
 
