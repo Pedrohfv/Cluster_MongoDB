@@ -205,7 +205,7 @@ Contêineres em execução no Docker:
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Docker.png"/>
 
-MongoDB:
+MongoDBCompass:
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Cluster_funcionamento.png"/>
 
