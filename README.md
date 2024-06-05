@@ -238,7 +238,7 @@ Foram injetados 100 mil documentos para cada filial, e o processo de distribuiç
 
 ### Consulta e Atualização de dados
 
-Através do programa() também existe a possibilidade de realizar consultas dos produtos por lote ou nome e alterações de preço e quantidades.
+Através do programa([Cluster_Consulta_Atualiza_Gera.PY](https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Programas/Cluster_Consulta_Atualiza_Gera.PY)) também existe a possibilidade de realizar consultas dos produtos por lote ou nome e alterações de preço e quantidades.
 
 ### Simulação de consulta:
 
@@ -270,7 +270,7 @@ O desempenho do banco de dados apresenta um comportamento estável em termos de 
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
 
-### Este de disponibilidade
+### Teste de disponibilidade
 
 Foi realizado um teste de disponibilidade em um dos bancos de dados. Uma nova filial foi criada, e foram observadas informações do banco e da coleção. Podemos observar que o banco possui uma shard primária e que o processo de fragmentação foi realizado com sucesso. O teste mostra que, durante a inserção de dados no banco, o shard-2-a foi desativado e a distribuição dos dados foi mantida devido ao processo de fragmentação, pois houve o processo de failover automático.  
 
