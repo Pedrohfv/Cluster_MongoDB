@@ -295,6 +295,10 @@ Por último, o roteador foi implementado para distribuir consultas de forma efic
 
 Todas essas decisões foram tomadas para assegurar a disponibilidade e confiabilidade do sistema, mesmo diante de falhas de hardware ou interrupções de rede. O projeto foi concebido com uma abordagem focada na disponibilidade, visando garantir que o sistema possa lidar com grandes volumes de dados de forma eficiente e confiável em um ambiente distribuído.
 
+Além disso, é importante mencionar que foram realizados testes funcionais abrangentes para validar a eficácia e a robustez do sistema. Esses testes foram cruciais para garantir que todas as partes do cluster funcionassem conforme o esperado e que a configuração adotada fosse capaz de lidar com as demandas operacionais previstas.
+
+Assim, a fragmentação dos dados e os testes funcionais desempenharam papéis essenciais no projeto, contribuindo para a construção de um banco de dados distribuído capaz de oferecer alta disponibilidade, escalabilidade e desempenho otimizado.
+
 
 
 
