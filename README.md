@@ -221,7 +221,7 @@ Foram injetados 100mil documentos para cada filial e o processo de destribuiçã
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Conf_fragmenta%C3%A7%C3%A3o.png"/>
 
-Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de cada coleção:
+### Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de cada coleção:
 * estoque_produtos_filial_1
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Filial_1.png"/>
 
@@ -239,13 +239,19 @@ Imagens da destribuição dos documentos para os grupos de shards 1, 2 e 3 de ca
 
 ### Consulta e Atualização de dados
 
-Através do programa() também existe a possibilidade de realizar consultas dos produtos e alterações.
+Através do programa() também existe a possibilidade de realizar consultas dos produtos por lote ou nome e alterações de preço e quantidades.
 
-Simulação de consulta:
+### Simulação de consulta:
+
+Realizando a simulação de uma consulta de um produto pelo lote. 
 
 <img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Consulta_banco.png"/>
 
+### Simulação de Alteraçao:
 
+Realizando a simulação de atualização de um produto pelo ID. 
+
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Atualiza_banco.png"/>
 
 
 
