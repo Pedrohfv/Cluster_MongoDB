@@ -258,7 +258,7 @@ Realizando a simulação de atualização de um produto pelo ID.
 
 Como forma de realizar um teste de desempenho no cluster, foi desenvolvido outro programa em Python para realizar requisições no banco de dados, tais como inserções, exclusões e atualizações.
 
-<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Atualiza_banco.png"/>
+<img src="https://github.com/Pedrohfv/Cluster_MongoDB/blob/main/Prints/Teste_estresse_2.png"/>
 
 ### Leitura dos parametros de performace do banco.
 
